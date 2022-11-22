@@ -1,0 +1,57 @@
+$fontName: 'Montserrat'; // имя шрифта
+$fontTemp: '../assets/fonts/' + $fontName + '-'; // шаблон пути и имени файла шрифта
+
+// шаблон формирования подключения шрифтов
+@each $font, $weight in 
+(
+  'Thin':       100, 
+  'UltraLight': 200, 
+  'Light':      300, 
+  'Regular':    400, 
+  'Medium':     500, 
+  'Semibold':   600,
+  'Bold':       700,
+  'Heavy':      800,
+  'Black':      900
+) {
+  @font-face {
+    font-family: $fontName;
+    src: local($fontName + '-' + $font),
+        url($fontTemp + $font + '.woff2') format('woff2'),
+        url($fontTemp + $font + '.woff') format('woff'),
+        url($fontTemp + $font + '.ttf') format('ttf'),
+        url($fontTemp + $font + '.eot') format('eot');
+    font-weight: $weight;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+$fontSecondName: 'PlayfairDisplay'; // имя шрифта
+$fontSecondTemp: '../assets/fonts/' + $fontSecondName + '-'; // шаблон пути и имени файла шрифта
+
+// шаблон формирования подключения шрифтов
+@each $font, $weight in 
+(
+  'Thin':       100, 
+  'UltraLight': 200, 
+  'Light':      300, 
+  'Regular':    400, 
+  'Medium':     500, 
+  'Semibold':   600,
+  'Bold':       700,
+  'Heavy':      800,
+  'Black':      900
+) {
+  @font-face {
+    font-family: $fontSecondName;
+    src: local($fontSecondName + '-' + $font),
+        url($fontSecondTemp + $font + '.woff2') format('woff2'),
+        url($fontSecondTemp + $font + '.woff') format('woff'),
+        url($fontSecondTemp + $font + '.ttf') format('ttf'),
+        url($fontSecondTemp + $font + '.eot') format('eot');
+    font-weight: $weight;
+    font-style: normal;
+    font-display: swap;
+  }
+}
